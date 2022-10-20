@@ -32,14 +32,6 @@
   width: 100%;
 }
 
-.box-shadow {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.text-shadow {
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-}
-
 /* Main Style */
 body {
   background: var(--primary-color);
