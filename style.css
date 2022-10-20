@@ -99,6 +99,15 @@ h2 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   font-size: 1.1rem;
   letter-spacing: 1.5px;
+  position: relative;
+  left: -1500px;
+  animation: task-slide-in 1s ease-out forwards;
+  opacity: 0;
+}
+.task-fade-out {
+  opacity: 100;
+  left: 0px;
+  animation: fade-out 0.7s ease-in forwards;
 }
 
 .delete-task-btn {
@@ -151,5 +160,16 @@ h2 {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes task-slide-in {
+  80% {
+    left: 50px;
+    opacity: 50%;
+  }
+  100% {
+    left: 0;
+    opacity: 100%;
   }
 }

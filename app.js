@@ -3,11 +3,18 @@ const newTaskBtn = document.querySelector("#new-task-form");
 const newTaskInput = document.querySelector("#new-task-form .input");
 const tasksList = document.querySelector("#tasks-list");
 const error = document.querySelector(".error");
+const filterTasksInput = document.querySelector("#filter");
+const clearTasksEl = document.querySelector("#clear-tasks");
 
 loadEventListeners();
 
 function loadEventListeners() {
+  // Add new task
   newTaskBtn.addEventListener("submit", addNewTask);
+  // Delete task
+  tasksList.addEventListener("click", deleteTask);
+  // Clear tasks
+  clearTasksEl.addEventListener("click", clearTasks);
 }
 
 // Add new task function
@@ -34,6 +41,37 @@ function addNewTask(e) {
   }
 
   newTaskInput.value = "";
+}
+
+// Add filter tasks function
+function filterTasks(e) {
+  const filterInput = e.target.value.toLowerCase();
+  document.querySelectorAll(".task").forEach(function (task) {
+    const taskTextContent = task.firstChild.textContent.toLowerCase();
+    if (taskTextContent.indexOf(filterInput) != -1) {
+      task.style.display = "flex";
+    } else {
+      task.style.display = "none";
+    }
+  });
+}
+
+// Add delete task function
+function deleteTask(e) {
+  // console.log(e.target.classList.contains("delete-task-btn"));
+  if (e.target.classList.contains("delete-task-btn")) {
+    e.target.parentElement.classList.add("task-fade-out");
+    setTimeout(() => {
+      e.target.parentElement.remove();
+    }, 800);
+  }
+}
+
+// Add clear tasks function
+function clearTasks() {
+  while (tasksList.firstChild) {
+    tasksList.removeChild(tasksList.firstChild);
+  }
 }
 
 // Display error function
