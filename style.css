@@ -83,7 +83,7 @@ h2 {
 }
 
 /* Tasks Style */
-#tasks {
+#tasks-list {
   margin-bottom: 2rem;
 }
 
@@ -101,7 +101,7 @@ h2 {
   letter-spacing: 1.5px;
 }
 
-.close-task-btn {
+.delete-task-btn {
   color: #a83479;
   cursor: pointer;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
