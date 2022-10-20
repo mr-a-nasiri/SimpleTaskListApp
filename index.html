@@ -8,10 +8,60 @@
       src="https://kit.fontawesome.com/fe57c98e23.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Task List</title>
   </head>
   <body>
+    <div class="card">
+      <div class="container">
+        <!-- Add Task Section -->
+        <div id="add-task-section">
+          <!-- Title -->
+          <h1 id="main-title">Simple Task List</h1>
+          <!-- Form -->
+          <form id="new-task-form">
+            <input
+              class="input"
+              type="text"
+              name="task"
+              id="task"
+              placeholder="Type a new task here..."
+            />
+            <input class="btn" type="submit" value="Add Task" />
+          </form>
+        </div>
+        <!-- Tasks List Section -->
+        <!-- Title -->
+        <h2>Tasks</h2>
+        <!-- Filter Tasks -->
+        <div id="filter-tasks">
+          <input
+            type="text"
+            name="filter"
+            id="filter"
+            class="input"
+            placeholder="Filter tasks here..."
+          />
+        </div>
+        <!-- Tasks -->
+        <ul id="tasks">
+          <li class="task">
+            Hi <i class="fa-solid fa-xmark close-task-btn"></i>
+          </li>
+          <li class="task">
+            Hi <i class="fa-solid fa-xmark close-task-btn"></i>
+          </li>
+        </ul>
+        <!-- Clear Tasks -->
+        <button class="btn">Clear Tasks</button>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
