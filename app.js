@@ -29,25 +29,25 @@ function getTasksFromLocalStorage() {
   // See if there is any task in the LS
   if (localStorage.getItem("tasks")) {
     tasks = JSON.parse(localStorage.getItem("tasks"));
+    // Rendering tasks in the browser
+    tasks.forEach(function (task) {
+      // Create li
+      const li = document.createElement("li");
+      // Set li class
+      li.className = "task";
+      // Set li text
+      li.appendChild(document.createTextNode(task));
+      // Create delete task icon
+      const delTaskIcon = document.createElement("i");
+      // Set delete task icon classes
+      delTaskIcon.className = "fa-solid fa-xmark delete-task-btn";
+      // Append delTaskIcon to li
+      li.appendChild(delTaskIcon);
+      // Append li to the tasksList
+      tasksList.appendChild(li);
+      // Set task in local storage
+    });
   }
-  // Rendering tasks in the browser
-  tasks.forEach(function (task) {
-    // Create li
-    const li = document.createElement("li");
-    // Set li class
-    li.className = "task";
-    // Set li text
-    li.appendChild(document.createTextNode(task));
-    // Create delete task icon
-    const delTaskIcon = document.createElement("i");
-    // Set delete task icon classes
-    delTaskIcon.className = "fa-solid fa-xmark delete-task-btn";
-    // Append delTaskIcon to li
-    li.appendChild(delTaskIcon);
-    // Append li to the tasksList
-    tasksList.appendChild(li);
-    // Set task in local storage
-  });
 }
 
 // Add new task function
@@ -129,7 +129,6 @@ function deleteTaskFromLocalStorage(task) {
   // Looping througth tasks and splicing the right task
   tasks.forEach(function (taskInLS, index) {
     if (taskInLS === task.textContent) {
-      console.log(tasks);
       tasks.splice(index, 1);
     }
   });
