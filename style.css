@@ -2,6 +2,7 @@
 :root {
   --light-color: #fff;
   --primary-color: #0a66c2;
+  --seconday-color: gold;
 }
 /* Reset */
 * {
@@ -20,7 +21,7 @@
   padding: 0.75rem 3rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   border: none;
-  background: gold;
+  background: var(--seconday-color);
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -29,6 +30,14 @@
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
   width: 100%;
+}
+
+.box-shadow {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Main Style */
@@ -72,14 +81,14 @@ h2 {
   font-size: 1.2rem;
   width: 100%;
   padding: 0.5rem 1rem;
-  border: 3px solid #fff;
+  border: 3px solid #eee;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   outline: none;
 }
 .input:focus {
-  border: 3px solid gold;
-  box-shadow: 0 0 0px 2px gold;
+  border: 3px solid var(--seconday-color);
+  box-shadow: 0 0 0px 2px var(--seconday-color);
 }
 
 /* Tasks Style */
@@ -116,22 +125,6 @@ h2 {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 720px) {
-  body {
-    background: #a83479;
-  }
-  .card {
-    width: 600px;
-    margin: 5rem auto;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-
-  .btn {
-    width: 35%;
-    padding: 1rem 0;
-  }
-}
-
 /* Error */
 .error {
   position: fixed;
@@ -147,7 +140,7 @@ h2 {
   align-items: center;
   text-align: center;
   background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  color: var(--light-color);
   font-size: 1.5em;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   border-radius: 50px;
@@ -171,5 +164,21 @@ h2 {
   100% {
     left: 0;
     opacity: 100%;
+  }
+}
+
+@media (min-width: 720px) {
+  body {
+    background: #5c65be;
+  }
+  .card {
+    width: 600px;
+    margin: 5rem auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn {
+    width: 35%;
+    padding: 1rem 0;
   }
 }
