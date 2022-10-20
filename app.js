@@ -2,6 +2,7 @@
 const newTaskBtn = document.querySelector("#new-task-form");
 const newTaskInput = document.querySelector("#new-task-form .input");
 const tasksList = document.querySelector("#tasks-list");
+const error = document.querySelector(".error");
 
 loadEventListeners();
 
@@ -9,11 +10,12 @@ function loadEventListeners() {
   newTaskBtn.addEventListener("submit", addNewTask);
 }
 
+// Add new task function
 function addNewTask(e) {
   e.preventDefault();
 
   if (newTaskInput.value.length < 3) {
-    alert("Please type a new task");
+    errorMessage();
   } else {
     // Create li
     const li = document.createElement("li");
@@ -32,4 +34,12 @@ function addNewTask(e) {
   }
 
   newTaskInput.value = "";
+}
+
+// Display error function
+function errorMessage() {
+  error.style.display = "flex";
+  setTimeout(() => {
+    error.style.display = "none";
+  }, 2000);
 }
